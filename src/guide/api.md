@@ -2,31 +2,44 @@
 
 Payments through API (Demo with Postman)
 POST Generate Checkout Link For Make Payment
-https://paysuite.co.mz/api/request
 
-Headers
-Accept	application/json
-Content-Type	application/json
-BODY formdata
-private_key	Merchant_private_key
-currency	Merchant_currency
-callback_url	http://domain.com/api/confirm/reference
-the callback will be sent by the
-server in background with parameters:
-payment_id: integer, amount: number,
-main_amount: number, currency: string,
-trxid: string, status: string (success),
-gateway_name:string, metadata: array (array of payment metadata, phone, reference, entity, comment)
-return_url	http://domain.com/product/1234/payment
-the status parameter will be added on return.
-status=success //
-status=error //
-is_test	Accept(1 OR 0)
-1 = Sandbox Mode
-0 = Live Mode
-amount	100
-purpose	testing purpose
+`https://paysuite.co.mz/api/request`
+
+
+## Headers   
+| Key         | Value            |
+| ----------  | ---------------- |
+|Accept       |	`application/json` |
+|Content-Type | `application/json` |
+
+
+## Request Body
+| Key            |        Value                           |
+| -------------- | ---------------------------------------|
+| private_key	 | Merchant_private_key                   |
+| currency       | Merchant_currency                      |
+| callback_url	 | http://domain.com/api/confirm/reference |
+| return_url:    | http://domain.com/product/1234/payment The status parameter will be added on return. `status=success`  `status=error`  |   
+| is_test	     | Accept(1 OR 0) 1 = Sandbox Mode 0 = Live Mode |
+| amount	     | 100                                    |
+| purpose        |	testing purpose                       |
+
 In body add private_key,currency,url,is_test,amount as key and their values from the credentials of merchant profile.
+
+The callback will be sent by the server in background with parameters:
+```javascript
+{
+    payment_id: integer,
+    amount: number,
+    main_amount: number,
+    currency: string,
+    trxid: string,
+    status: string (success),
+    gateway_name:string,
+    metadata: array ( eg: payment metadata, phone, reference, entity, comment)
+    
+}
+```
 
 ![Payment API](./images/api-1.png)
 
@@ -49,4 +62,4 @@ Failed:
 
 Full Documentation:
 
-[https://paysuite.co.mz/api/docs](https://paysuite.co.mz/api/docs)
+[https://paysuite.co.mz/api/documentation](https://paysuite.co.mz/api/documentation)
