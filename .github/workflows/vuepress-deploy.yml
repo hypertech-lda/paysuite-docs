@@ -14,4 +14,4 @@ jobs:
         TARGET_BRANCH: github-pages
         BUILD_SCRIPT: yarn && yarn build
         BUILD_DIR: src/.vuepress/dist
-        CNAME: docs.paysuite.co.mz
+        CNAME: https://docs.paysuite.co.mz
