@@ -1,9 +1,15 @@
-# API
+# Payments through API
 
-Payments through API (Demo with Postman)
-POST Generate Checkout Link For Make Payment
 
-`https://paysuite.co.mz/api/request`
+
+
+##  Generate Checkout Link For Make Payment
+
+To generate the checkout link for make payment, send POST request to following URL:
+
+```txt
+https://paysuite.co.mz/api/request
+```
 
 
 ## Headers   
@@ -14,6 +20,8 @@ POST Generate Checkout Link For Make Payment
 
 
 ## Request Body
+In body create JSON object with private_key,currency,url,is_test,amount as key and their values from the credentials of merchant profile.
+
 | Key            |        Value                           |
 | -------------- | ---------------------------------------|
 | private_key	 | Merchant_private_key                   |
@@ -24,7 +32,7 @@ POST Generate Checkout Link For Make Payment
 | amount	     | 100                                    |
 | purpose        |	testing purpose                       |
 
-In body add private_key,currency,url,is_test,amount as key and their values from the credentials of merchant profile.
+
 
 The callback will be sent by the server in background with parameters:
 ```javascript
