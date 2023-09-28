@@ -39,7 +39,7 @@ module.exports = {
       },
       {
         text: 'API',
-        link: '/api/'
+        link: 'https://paysuite.co.mz/api/documentation'
       },
       {
         text: 'Login to Dashboard',
